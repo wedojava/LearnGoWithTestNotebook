@@ -14,29 +14,21 @@ Tips:
 
 ## Chapters
 
-### hello
+### 01 hello
 
-#### TDD 过程和这些步骤 为什么 是重要的
+#### TDD 过程和步骤
 
- - 编写一个失败的测试，并查看失败信息，我们知道现在有一个为需求编写的 相关 的测试，并且看到它产生了 易于理解的失败描述
+ - 编写一个失败的测试，并查看失败信息，我们知道现在有一个为需求编写的相关的测试，并且看到它产生了易于理解的失败描述
 
  - 编写最少量的代码使其通过，以获得可以运行的程序
 
- - 然后 重构，基于我们测试的安全性，以确保我们拥有易于使用的精心编写的代码
+ - 然后重构，基于我们测试的安全性，以确保我们拥有易于使用的精心编写的代码
 
 
-### integers
+### 02 integers
 
 为测试的运行编写最少量的代码并检查失败测试的输出
 
-adder.go:
-```
-package integers
-
-func Add(x, y int) int {
-	return x + y
-}
-```
 adder_test.go:
 ```
 func TestAdder(t *testing.T) {
@@ -53,6 +45,14 @@ func ExampleAdd() {
 	sum := Add(1, 5)
 	fmt.Println(sum)
 	// Output: 6
+}
+```
+adder.go:
+```
+package integers
+
+func Add(x, y int) int {
+	return x + y
 }
 ```
 cmd:
