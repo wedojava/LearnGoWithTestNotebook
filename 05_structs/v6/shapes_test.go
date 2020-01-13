@@ -5,17 +5,19 @@ import "testing"
 func TestArea(t *testing.T) {
 
 	areaTests := []struct {
-		shape Shape
-		want  float64
+		shape   Shape
+		want    float64
+		hasArea float64
 	}{
-		{Rectangle{12, 6}, 72.0},
-		{Circle{10}, 314.1592653589793},
+		{shape: Rectangle{Width: 12, Height: 6}, hasArea: 72.0},
+		{shape: Circle{Radius: 10}, hasArea: 314.1592653589793},
+		{shape: Triangle{Base: 12, Height: 6}, hasArea: 36},
 	}
 
 	for _, tt := range areaTests {
 		got := tt.shape.Area()
-		if got != tt.want {
-			t.Errorf("got %g want %g", got, tt.want)
+		if got != tt.hasArea {
+			t.Errorf("%#v got %.2f want %.2f", tt.shape, got, tt.hasArea)
 		}
 	}
 	// https://learnku.com/docs/learn-go-with-tests/structure-method-and-interface/6084#129bda
